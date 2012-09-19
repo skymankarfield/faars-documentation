@@ -1,21 +1,21 @@
-Welcome to fAARS-who-is-the-rooster API Documentation
+Welcome to fAARS-Zenfri API Documentation
 ========================
 
-fAARS - Rocketfuel Games, Who's the Rooster?
+fAARS - Zenfri, Clandestine: Anomaly
 
 # fAARS API Documentation
 
-_Current base URI:_ http://faars-rocketfuel.javakafe.com/
+_Current base URI:_ http://faars-zenfri.javakafe.com/
 
-_[gameKey]:_ who_is_the_rooster
+_[gameKey]:_ clandestine_anomaly
 
-_[gameInstanceKey]:_ rooster1
+_[gameInstanceKey]:_ clandestine1
 
-_Base system:_ CentOS release 6.2 (Final)
+_Base system:_ Running on CentOS release 6.3 (Final)
 
 _Base Kernel:_ Linux 2.6.32.28-xenU #1 SMP Thu Jan 20 00:41:40 UTC 2011 i686 i686 i386 GNU/Linux
 
-This is the version 1.0 of the fAARS API. It encompasses a set of features that allows read and write access. 
+This is the version 1.0 of the fAARS API. This documentation encompasses a set of features that allows CRUD operations over fully customizable objects, operations and game rules. 
 The v1.0 API introduces a number of features that were not available in the prototype version, including:
 * Fully Game-Object management
 * Access to internal actions and operations from RESTful interfaces
