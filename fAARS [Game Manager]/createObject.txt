@@ -1,0 +1,122 @@
+# createObject
+New Game-Object data types can be created by sending a correctly formatted document
+to the corresponding URL including the JSON data in the POST body.
+
+* Method: POST
+* URL: /[gameKey]/[gameInstanceKey]/gameObjects
+* [gameKey]: who_is_the_rooster
+* [gameInstanceKey]: rooster1
+* Formats: JSON
+* Returns: JSON formatted message. See example below.
+* Possible return message codes:
+** 0 = Success
+** 1 = SQL Execution Error
+** 2 = No game ID or game instance ID found
+** 3 = Error inserting game object into the database
+** 4 = Error inserting game object attributes into the database
+** 5 = Error inserting game object groups into the database
+** 6 = A game object attribute is missing: [attributeName]
+** 7 = A required game object attribute is empty: [attributeName]
+** 19 = Provided username and password value pair already exists
+** 22 = Error inserting game object collections into the database
+
+## Example creating a new Game-Object:
+
+curl -i -X POST -H 'Content-Type: application/json' -d '{"fullObjectName":"fullName","objectKey":"objectKeyTest","allowLogin":"1","loginInfo":[{"username":"email@mail.com","password":"passwordObject"}],"currentStateKey":"initialState","active":"0","transient":"1","attributes":[{"attributeKey":"attr1","value":"val","active":"1"},{"attributeKey":"attr2","value":"val","active":"0"},{"attributeKey":"attr3","value":"val","active":"1"}],"groups":[{"groupKey":"group4","active":"1"},{"groupKey":"group5","active":"0"},{"groupKey":"group6","active":"0"}],"collections":[{"collectionKey":"coll1","value":[1,2,3],"active":"1"},{"collectionKey":"coll2","value":[4,5,6],"active":"1"},{"collectionKey":"coll3","value":[7,8,9],"active":"1"}],"currentGPSLocation":[{"currentLat":"1000000","currentLon":"1000000"}],"currentZone":"initialZone"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects
+
+
+* Receives a JSON file via POST method:
+{
+    "fullObjectName": "fullName", (Long name of a Game-Object. It can take any value. A value is not required. It can contain an empty string)
+    "objectKey": "objectKeyTest", (Unique key ID of a Game-Object. It can take any value. A value is required)
+    "allowLogin": "1", (Whether to allow a Game-Object to login to the system. It can only take '0' or '1' as values. A value is required)
+    "loginInfo": [ (Container for the login information. It can't be empty, and it should contain the 'username' and 'password' attributes specified)
+        {
+            "username": "email@mail.com", (Username to be used to login. It can take any value. A value is not required. It can contain an empty string)
+            "password": "passwordObject" (Password to be used to login. It can take any value. A value is not required. It can contain an empty string)
+        }
+    ],
+    "currentStateKey": "initialState", (Current state of a Game-Object in the system. It can take any value. A value is required)
+    "active": "0", (Whether a Game-Object is active or not to be considered as part of the fAARS game rules processing. It can only take '0' or '1' as values. A value is required)
+    "transient": "1", (Whether to allow copies of a Game-Object or not when creating new instances of a game. It can only take '0' or '1' as values. A value is required)
+    "attributes": [ (Container for the list of secondary attributes of a Game-Object. It should contain at least one attribute specified)
+        {
+            "attributeKey": "attr1", (Key ID of an attribute. It should be unique within the context of a Game-Object. It can take any value. A value is required)
+            "value": "val", (Value of an attribute. It can take any value. A value is required)
+            "active": "1" (Whether an attribute is active or not to be considered as part of the fAARS game rules processig. It can only take '0' or '1' as values. A value is required)
+        },
+        {
+            "attributeKey": "attr2",
+            "value": "val",
+            "active": "0"
+        },
+        {
+            "attributeKey": "attr3",
+            "value": "val",
+            "active": "1"
+        }
+    ],
+    "groups": [ (Container for the list of groups that a Game-Object belongs to. It should contain at least one group specified)
+        {
+            "groupKey": "group4", (Key ID of a group. It should be unique within the context of a Game-Object. It can take any value. A value is required)
+            "active": "1" (Whether a group is active or not to be considered as part of the fAARS game rules processing. It can only take '0' or '1' as values. A value is required)
+        },
+        {
+            "groupKey": "group5",
+            "active": "0"
+        },
+        {
+            "groupKey": "group6",
+            "active": "0"
+        }
+    ],
+    "collections": [ (Container for the list of collections of a Game-Object. It should contain at least one collection specified)
+        {
+            "collectionKey": "coll1", (Key ID of a collection. It should be unique within the context of a Game-Object. It can take any value. A value is required)
+            "value": [1,2,3], (Values in the collection. It can take any values. A value is required)
+            "active": "1" (Whether a collection is active or not to be considered as part of the fAARS game rules processig. It can only take '0' or '1' as values. A value is required)
+        },
+        {
+            "collectionKey": "coll2",
+            "value": [4,5,6],
+            "active": "0"
+        },
+        {
+            "collectionKey": "coll3",
+            "value": [7,8,9],
+            "active": "1"
+        }
+    ],
+    "currentGPSLocation": [ (Container for the current GPS location of a Game-Object. It can't be empty, and it should contain the 'currentLat' and 'currentLon' attributes specified))
+        {
+            "currentLat": "1000000", (GPS latitude. It takes the GPS latitude value as an integer. A value is not required. It can contain an empty string)
+            "currentLon": "1000000" (GPS longitude. It takes the GPS longitude value as an integer. A value is not required. It can contain an empty string)
+        }
+    ],
+    "currentZone": "initialZone" (Contains the current location zone of a Game-Object. It can take any value. A value is not required. It can contain an empty string)
+}
+
+
+* Sample Response 'On Success':
+{
+    "status": 0,
+    "details": {
+        "action": "createObject",
+        "objectKey": "objectKeyTest",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1"
+    }
+}
+
+
+* Sample Response 'On Failure':
+{
+    "status": 1,
+    "message": "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'objectKeyTest-1' for key 'objectKey'",
+    "details": {
+        "action": "createObject",
+        "objectKey": "objectKeyTest",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1"
+    }
+}

@@ -1,0 +1,121 @@
+# getObjectByKey
+Get details of a specific Game-Object by providing its unique Key ID.
+
+* Method: GET
+* URL: /[gameKey]/[gameInstanceKey]/gameObjects/[objectKey]
+* [gameKey]: who_is_the_rooster
+* [gameInstanceKey]: rooster1
+* [objectKey]: The unique object key ID value specified when creating the Game-Object
+* Formats: JSON
+* Returns: JSON formatted message. See example below.
+* Possible return message codes:
+** 0 = Success
+** 1 = SQL Execution Error
+** 2 = No game ID or game instance ID found
+** 8 = No game object ID found
+** 9 = No game object entry found in database with given keys
+** 10 = No game object attributes entry found in database with given keys
+** 11 = No game object groups entry found in database with given keys
+** 23 = No game object collections entry found in database with given keys
+
+## Example getting a Game-Object by its unique Key ID:
+
+curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKey21
+
+
+* Sample Response 'On Success':
+{
+    "fullObjectName": "fullName",
+    "objectKey": "objectKeyTest",
+    "currentStateKey": "initialState",
+    "currentZone": "initialZone",
+    "allowLogin": "1",
+    "transient": "1",
+    "active": "0",
+    "currentGPSLocation": {
+        "currentLat": "1000000",
+        "currentLon": "1000000"
+    },
+    "loginInfo": {
+        "username": "email@mail.com",
+        "password": "passwordObject"
+    },
+    "attributes": {
+        "attr1": {
+            "attributeKey": "attr1",
+            "value": "val",
+            "active": "1"
+        },
+        "attr2": {
+            "attributeKey": "attr2",
+            "value": "val",
+            "active": "0"
+        },
+        "attr3": {
+            "attributeKey": "attr3",
+            "value": "val",
+            "active": "1"
+        }
+    },
+    "groups": {
+        "group4": {
+            "groupKey": "group4",
+            "active": "1"
+        },
+        "group5": {
+            "groupKey": "group5",
+            "active": "0"
+        },
+        "group6": {
+            "groupKey": "group6",
+            "active": "0"
+        }
+    },
+    "collections": {
+        "coll1": {
+            "collectionKey": "coll1",
+            "value": [
+                "1",
+                "2",
+                "3"
+            ],
+            "active": "1"
+        },
+        "coll2": {
+            "collectionKey": "coll2",
+            "value": [
+                "4",
+                "5",
+                "6"
+            ],
+            "active": "1"
+        },
+        "coll3": {
+            "collectionKey": "coll3",
+            "value": [
+                "7",
+                "8",
+                "9"
+            ],
+            "active": "1"
+        }
+    },
+    "status": 0,
+    "details": {
+        "action": "getObjectByKey",
+        "objectKey": "objectKeyTest",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1"
+    }
+}
+
+
+* Sample Response 'On Failure':
+{
+    "status": 8,
+    "message": "No game object ID found",
+    "details": {
+        "action": "getGameObjectID",
+        "objectKey": "objectKey21"
+    }
+}

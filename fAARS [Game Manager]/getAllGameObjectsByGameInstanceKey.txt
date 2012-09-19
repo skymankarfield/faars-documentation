@@ -1,0 +1,498 @@
+# getAllGameObjectsByGameInstanceKey
+Get details of all the Game-Objects that belong to a specific instance of a game by providing a
+Game Instance Key ID.
+
+* Method: GET
+* URL: /[gameKey]/[gameInstanceKey]/gameObjects
+* [gameKey]: who_is_the_rooster
+* [gameInstanceKey]: rooster1
+* Formats: JSON
+* Returns: JSON formatted message. See example below.
+* Possible return message codes:
+** 0 = Success
+** 2 = No game ID or game instance ID found
+** 8 = No game object ID found
+** 9 = No game object entry found in database with given keys
+** 10 = No game object attributes entry found in database with given keys
+** 11 = No game object groups entry found in database with given keys
+** 12 = No game object entries found in database with given game instance key
+** 23 = No game object collections entry found in database with given keys
+
+## Example getting Game-Objects by Game Instance Key ID:
+
+curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects
+
+
+* Sample Response 'On Success':
+{
+    "gameObjects": [
+        {
+            "fullObjectName": "Who is the Rooster?",
+            "objectKey": "game_instance_1",
+            "currentStateKey": "running",
+            "currentZone": "noZone",
+            "allowLogin": "0",
+            "transient": "0",
+            "active": "1",
+            "currentGPSLocation": {
+                "currentLat": "0",
+                "currentLon": "0"
+            },
+            "loginInfo": {
+                "username": "",
+                "password": ""
+            },
+            "attributes": {
+                "version": {
+                    "attributeKey": "version",
+                    "value": "1.0",
+                    "active": "0"
+                }
+            },
+            "groups": {
+                "system": {
+                    "groupKey": "system",
+                    "active": "1"
+                }
+            },
+            "collections": {
+		        "coll1": {
+		            "collectionKey": "coll1",
+		            "value": [
+		                "1",
+		                "2",
+		                "3"
+		            ],
+		            "active": "1"
+		        },
+		        "coll2": {
+		            "collectionKey": "coll2",
+		            "value": [
+		                "4",
+		                "5",
+		                "6"
+		            ],
+		            "active": "1"
+		        },
+		        "coll3": {
+		            "collectionKey": "coll3",
+		            "value": [
+		                "7",
+		                "8",
+		                "9"
+		            ],
+		            "active": "1"
+		        }
+		    },
+            "status": 0,
+            "details": {
+                "action": "getObjectByKey",
+                "objectKey": "game_instance_1",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        },
+        {
+            "fullObjectName": "Lucio Gutierrez",
+            "objectKey": "lucio_gutierrez",
+            "currentStateKey": "idle",
+            "currentZone": "uofa",
+            "allowLogin": "1",
+            "transient": "1",
+            "active": "1",
+            "currentGPSLocation": {
+                "currentLat": "0",
+                "currentLon": "0"
+            },
+            "loginInfo": {
+                "username": "lucio@ualberta.ca",
+                "password": "blabla"
+            },
+            "attributes": {
+                "score": {
+                    "attributeKey": "score",
+                    "value": "0",
+                    "active": "1"
+                }
+            },
+            "groups": {
+                "players": {
+                    "groupKey": "players",
+                    "active": "1"
+                }
+            },
+            "collections": {
+		        "coll1": {
+		            "collectionKey": "coll1",
+		            "value": [
+		                "1",
+		                "2",
+		                "3"
+		            ],
+		            "active": "1"
+		        },
+		        "coll2": {
+		            "collectionKey": "coll2",
+		            "value": [
+		                "4",
+		                "5",
+		                "6"
+		            ],
+		            "active": "1"
+		        },
+		        "coll3": {
+		            "collectionKey": "coll3",
+		            "value": [
+		                "7",
+		                "8",
+		                "9"
+		            ],
+		            "active": "1"
+		        }
+		    },
+            "status": 0,
+            "details": {
+                "action": "getObjectByKey",
+                "objectKey": "lucio_gutierrez",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        },
+        {
+            "fullObjectName": "fullName",
+            "objectKey": "objectKeyTest10",
+            "currentStateKey": "initialState",
+            "currentZone": "initialZone",
+            "allowLogin": "1",
+            "transient": "1",
+            "active": "0",
+            "currentGPSLocation": {
+                "currentLat": "1000000",
+                "currentLon": "1000000"
+            },
+            "loginInfo": {
+                "username": "email11@mail.com",
+                "password": "passwordObject"
+            },
+            "attributes": {
+                "attr3": {
+                    "attributeKey": "attr3",
+                    "value": "val",
+                    "active": "1"
+                },
+                "attr2": {
+                    "attributeKey": "attr2",
+                    "value": "val",
+                    "active": "0"
+                },
+                "attr1": {
+                    "attributeKey": "attr1",
+                    "value": "val",
+                    "active": "1"
+                }
+            },
+            "groups": {
+                "group6": {
+                    "groupKey": "group6",
+                    "active": "0"
+                },
+                "group5": {
+                    "groupKey": "group5",
+                    "active": "0"
+                },
+                "group4": {
+                    "groupKey": "group4",
+                    "active": "1"
+                }
+            },
+            "collections": {
+		        "coll1": {
+		            "collectionKey": "coll1",
+		            "value": [
+		                "1",
+		                "2",
+		                "3"
+		            ],
+		            "active": "1"
+		        },
+		        "coll2": {
+		            "collectionKey": "coll2",
+		            "value": [
+		                "4",
+		                "5",
+		                "6"
+		            ],
+		            "active": "1"
+		        },
+		        "coll3": {
+		            "collectionKey": "coll3",
+		            "value": [
+		                "7",
+		                "8",
+		                "9"
+		            ],
+		            "active": "1"
+		        }
+		    },
+            "status": 0,
+            "details": {
+                "action": "getObjectByKey",
+                "objectKey": "objectKeyTest10",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        },
+        {
+            "fullObjectName": "fullName",
+            "objectKey": "objectKeyTest11",
+            "currentStateKey": "initialState",
+            "currentZone": "initialZone",
+            "allowLogin": "1",
+            "transient": "1",
+            "active": "0",
+            "currentGPSLocation": {
+                "currentLat": "1000000",
+                "currentLon": "1000000"
+            },
+            "loginInfo": {
+                "username": "email12@mail.com",
+                "password": "passwordObject"
+            },
+            "attributes": {
+                "attr1": {
+                    "attributeKey": "attr1",
+                    "value": "val",
+                    "active": "1"
+                },
+                "attr2": {
+                    "attributeKey": "attr2",
+                    "value": "val",
+                    "active": "0"
+                },
+                "attr3": {
+                    "attributeKey": "attr3",
+                    "value": "val",
+                    "active": "1"
+                }
+            },
+            "groups": {
+                "group4": {
+                    "groupKey": "group4",
+                    "active": "1"
+                },
+                "group5": {
+                    "groupKey": "group5",
+                    "active": "0"
+                },
+                "group6": {
+                    "groupKey": "group6",
+                    "active": "0"
+                }
+            },
+            "collections": {
+		        "coll1": {
+		            "collectionKey": "coll1",
+		            "value": [
+		                "1",
+		                "2",
+		                "3"
+		            ],
+		            "active": "1"
+		        },
+		        "coll2": {
+		            "collectionKey": "coll2",
+		            "value": [
+		                "4",
+		                "5",
+		                "6"
+		            ],
+		            "active": "1"
+		        },
+		        "coll3": {
+		            "collectionKey": "coll3",
+		            "value": [
+		                "7",
+		                "8",
+		                "9"
+		            ],
+		            "active": "1"
+		        }
+		    },
+            "status": 0,
+            "details": {
+                "action": "getObjectByKey",
+                "objectKey": "objectKeyTest11",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        },
+        {
+            "fullObjectName": "fullName",
+            "objectKey": "objectKeyTest12",
+            "currentStateKey": "initialState",
+            "currentZone": "initialZone",
+            "allowLogin": "1",
+            "transient": "1",
+            "active": "0",
+            "currentGPSLocation": {
+                "currentLat": "1000000",
+                "currentLon": "1000000"
+            },
+            "loginInfo": {
+                "username": "email13@mail.com",
+                "password": "passwordObject"
+            },
+            "attributes": {
+                "attr1": {
+                    "attributeKey": "attr1",
+                    "value": "val",
+                    "active": "1"
+                },
+                "attr2": {
+                    "attributeKey": "attr2",
+                    "value": "val",
+                    "active": "0"
+                },
+                "attr3": {
+                    "attributeKey": "attr3",
+                    "value": "val",
+                    "active": "1"
+                }
+            },
+            "groups": {
+                "group4": {
+                    "groupKey": "group4",
+                    "active": "1"
+                },
+                "group5": {
+                    "groupKey": "group5",
+                    "active": "0"
+                },
+                "group6": {
+                    "groupKey": "group6",
+                    "active": "0"
+                }
+            },
+            "collections": {
+		        "coll1": {
+		            "collectionKey": "coll1",
+		            "value": [
+		                "1",
+		                "2",
+		                "3"
+		            ],
+		            "active": "1"
+		        },
+		        "coll2": {
+		            "collectionKey": "coll2",
+		            "value": [
+		                "4",
+		                "5",
+		                "6"
+		            ],
+		            "active": "1"
+		        },
+		        "coll3": {
+		            "collectionKey": "coll3",
+		            "value": [
+		                "7",
+		                "8",
+		                "9"
+		            ],
+		            "active": "1"
+		        }
+		    },
+            "status": 0,
+            "details": {
+                "action": "getObjectByKey",
+                "objectKey": "objectKeyTest12",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        },
+        {
+            "fullObjectName": "Plot Point 1",
+            "objectKey": "plot_point_1",
+            "currentStateKey": "plotPointUnlockedForMobileAndWeb",
+            "currentZone": "comp_sci",
+            "allowLogin": "0",
+            "transient": "0",
+            "active": "1",
+            "currentGPSLocation": {
+                "currentLat": "1000000",
+                "currentLon": "1000000"
+            },
+            "loginInfo": {
+                "username": "",
+                "password": ""
+            },
+            "attributes": {
+                "nickame": {
+                    "attributeKey": "nickame",
+                    "value": "nickname",
+                    "active": "0"
+                }
+            },
+            "groups": {
+                "plotpoints": {
+                    "groupKey": "plotpoints",
+                    "active": "1"
+                }
+            },
+            "collections": {
+		        "coll1": {
+		            "collectionKey": "coll1",
+		            "value": [
+		                "1",
+		                "2",
+		                "3"
+		            ],
+		            "active": "1"
+		        },
+		        "coll2": {
+		            "collectionKey": "coll2",
+		            "value": [
+		                "4",
+		                "5",
+		                "6"
+		            ],
+		            "active": "1"
+		        },
+		        "coll3": {
+		            "collectionKey": "coll3",
+		            "value": [
+		                "7",
+		                "8",
+		                "9"
+		            ],
+		            "active": "1"
+		        }
+		    },
+            "status": 0,
+            "details": {
+                "action": "getObjectByKey",
+                "objectKey": "plot_point_1",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        }
+    ],
+    "status": 0,
+    "details": {
+        "action": "getAllGameObjectsByGameInstanceKey",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1"
+    }
+}
+
+
+* Sample Response 'On Failure':
+{
+    "status": 2,
+    "message": "No game ID or game instance ID found",
+    "details": {
+        "action": "getGameInstanceID",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster"
+    }
+}

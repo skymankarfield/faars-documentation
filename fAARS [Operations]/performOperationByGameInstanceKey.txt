@@ -1,0 +1,142 @@
+# performOperationByGameInstanceKey
+This API allows to set values and apply operations over the game-developer-created set of attributes that are specified
+in the "attributes" section of the JSON file when a new Game-Object is created by providing a Game Instance Key ID
+and Attribute Key ID.
+This API allows to modify only those attributes of a Game-Object that are specified in the "attributes" section of 
+a Game-Object.
+In order to directly modify the automatically inherited set of attributes outside the "attributes" section of a 
+Game-Object, please refer to the [Game Manager] set of APIs.
+
+* Method: PUT 
+* URL: /[gameKey]/[gameInstanceKey]/operations
+* [gameKey]: who_is_the_rooster
+* [gameInstanceKey]: rooster1
+* [attributeKey]: Attribute Key ID of one of the attributes of a Game-Object specified in the "attributes" array
+* Formats: JSON
+* Returns: JSON formatted message. See example below.
+* Possible return message codes:
+** 0 = Success
+** 1 = SQL Execution Error
+** 2 = No game ID or game instance ID found
+** 6 = A game object attribute is missing: [attributeName]
+** 7 = A required game object attribute is empty: [attributeName]
+** 8 = No game object ID found
+** 9 = No game object entry found in database with given keys
+** 10 = No game object attributes entry found in database with given keys
+** 11 = No game object groups entry found in database with given keys
+** 12 = No game object entries found in database with given game instance key
+** 14 = No game object attribute entry found in database with given keys
+** 15 = No valid operation
+** 16 = Values are not permitted for the requested operation
+** 17 = Update operation was not successful, or there is nothing to update
+
+## Example updating a set of Game-Objects attribute by providing a Game Instance Key ID and Attribute Key ID:
+
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","value":"5","operation":"+"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/operations
+
+
+* Receives a JSON file via PUT method:
+{
+	"attributeKey":"attr1", (Attribute Key. It can take any value. A value is required)
+	"value":"5", (Value to be used in the operation. It can take any value. A value is required)
+	"operation":"+" (The operation to be performed. It can only take '+', '-', '/', '*', or 'set' as values. A value is required)
+}
+
+
+* Sample Response 'On Success':
+{
+    "gameObjects": [
+        {
+            "status": 0,
+            "details": {
+                "action": "performOperationByObjectKey",
+                "objectKey": "objectKey6",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1",
+                "attributeKey": "attr1"
+            }
+        },
+        {
+            "status": 0,
+            "details": {
+                "action": "performOperationByObjectKey",
+                "objectKey": "objectKeyTest1",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1",
+                "attributeKey": "attr1"
+            }
+        },
+        {
+            "status": 0,
+            "details": {
+                "action": "performOperationByObjectKey",
+                "objectKey": "objectKeyTest2",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1",
+                "attributeKey": "attr1"
+            }
+        },
+        {
+            "status": 0,
+            "details": {
+                "action": "performOperationByObjectKey",
+                "objectKey": "objectKeyTest3",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1",
+                "attributeKey": "attr1"
+            }
+        },
+        {
+            "status": 16,
+            "message": "Values are not permitted for the requested operation",
+            "details": {
+                "action": "performOperationByObjectKey",
+                "objectKey": "objectKeyTest4",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1",
+                "attributeKey": "attr1"
+            }
+        },
+        {
+            "status": 16,
+            "message": "Values are not permitted for the requested operation",
+            "details": {
+                "action": "performOperationByObjectKey",
+                "objectKey": "objectKeyTest5",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1",
+                "attributeKey": "attr1"
+            }
+        },
+        {
+            "status": 16,
+            "message": "Values are not permitted for the requested operation",
+            "details": {
+                "action": "performOperationByObjectKey",
+                "objectKey": "objectKeyTest6",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1",
+                "attributeKey": "attr1"
+            }
+        }
+    ],
+    "status": 0,
+    "details": {
+        "action": "performOperationByGameInstanceKey",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1",
+        "attributeKey": "attr1"
+    }
+}
+
+
+* Sample Response 'On Failure':
+{
+    "status": 2,
+    "message": "No game ID or game instance ID found",
+    "details": {
+        "action": "getGameInstanceID",
+        "gameKey": "who_is_the_roost",
+        "gameInstanceKey": "rooster1"
+    }
+}

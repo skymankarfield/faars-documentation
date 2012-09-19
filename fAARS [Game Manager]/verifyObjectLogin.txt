@@ -1,0 +1,48 @@
+# verifyObjectLogin
+Verify whether a Game-Object passes the login process by providing username and password
+
+* Method: GET
+* URL: /[gameKey]/[gameInstanceKey]/gameObjects/verifyObjectLogin/[username]/[password]
+* [gameKey]: who_is_the_rooster
+* [gameInstanceKey]: rooster1
+* [username]: Username assigned during Game-Object instantiation
+* [password]: Password assigned during Game-Object instantiation
+* Formats: JSON
+* Returns: JSON formatted message. See example below.
+* Possible return message codes:
+** 0 = Success
+** 1 = SQL Execution Error
+** 2 = No game ID or game instance ID found
+** 18 = Game-Object not found with given username and password
+
+## Example verifying whether a Game-Object passes the login process by providing username and password:
+
+curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/verifyObjectLogin/email2@mail.com/passwordObject2
+
+
+* Sample Response 'On Success':
+{
+    "objectKey": "objectKeyTest2",
+    "active": "0",
+    "allowLogin": "1",
+    "status": 0,
+    "details": {
+        "action": "verifyObjectLogin",
+        "username": "email2@mail.com",
+        "password": "passwordObject2",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1"
+    }
+}
+
+
+* Sample Reponse 'On Failure':
+{
+    "status": 2,
+    "message": "No game ID or game instance ID found",
+    "details": {
+        "action": "getGameInstanceID",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooter1"
+    }
+}

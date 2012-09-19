@@ -1,0 +1,76 @@
+# deleteAllGameObjectsByGroupKey
+Delete all the Game-Objects that belong to a specific group by providing a
+Group Key ID.
+
+* Method: DELETE
+* URL: /[gameKey]/[gameInstanceKey]/gameObjects/groups/[groupKey]
+* [gameKey]: who_is_the_rooster
+* [gameInstanceKey]: rooster1
+* [groupKey]: Any group key value
+* Formats: JSON
+* Returns: JSON formatted message. See example below.
+* Possible return message codes:
+** 0 = Success
+** 1 = SQL Execution Error
+** 2 = No game ID or game instance ID found
+** 8 = No game object ID found
+** 9 = No game object entry found in database with given keys
+** 13 = No game object entries found in database with given object group key
+
+## Example deleting Game-Objects by Group Key ID:
+
+curl -i -X DELETE http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/groups/group2
+
+
+* Sample Response 'On Success':
+{
+    "gameObjects": [
+        {
+            "status": 0,
+            "details": {
+                "action": "deleteObjectByKey",
+                "objectKey": "objectKeyTest1",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        },
+        {
+            "status": 0,
+            "details": {
+                "action": "deleteObjectByKey",
+                "objectKey": "objectKeyTest2",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        },
+        {
+            "status": 0,
+            "details": {
+                "action": "deleteObjectByKey",
+                "objectKey": "objectKeyTest3",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        }
+    ],
+    "status": 0,
+    "details": {
+        "action": "deleteAllGameObjectsByGroupKey",
+        "groupKey": "group2",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1"
+    }
+}
+
+
+* Sample Response 'On Failure':
+{
+    "status": 13,
+    "message": "No game object entries found in database with given object group key",
+    "details": {
+        "action": "getAllGameObjectsByGroupKey",
+        "groupKey": "group2",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1"
+    }
+}

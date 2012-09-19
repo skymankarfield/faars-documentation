@@ -1,0 +1,73 @@
+# deleteAllGameObjectsByGameInstanceKey
+Delete all the Game-Objects that belong to a specific instance of a game by providing a
+Game Instance Key ID.
+
+* Method: DELETE
+* URL: /[gameKey]/[gameInstanceKey]/gameObjects
+* [gameKey]: who_is_the_rooster
+* [gameInstanceKey]: rooster1
+* Formats: JSON
+* Returns: JSON formatted message. See example below.
+* Possible return message codes:
+** 0 = Success
+** 1 = SQL Execution Error
+** 2 = No game ID or game instance ID found
+** 8 = No game object ID found
+** 9 = No game object entry found in database with given keys
+** 12 = No game object entries found in database with given game instance key
+
+## Example deleting Game-Objects by Game Instance Key ID:
+
+curl -i -X DELETE http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects
+
+
+* Sample Response 'On Success':
+{
+    "gameObjects": [
+        {
+            "status": 0,
+            "details": {
+                "action": "deleteObjectByKey",
+                "objectKey": "objectKeyTest4",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        },
+        {
+            "status": 0,
+            "details": {
+                "action": "deleteObjectByKey",
+                "objectKey": "objectKeyTest5",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        },
+        {
+            "status": 0,
+            "details": {
+                "action": "deleteObjectByKey",
+                "objectKey": "objectKeyTest6",
+                "gameKey": "who_is_the_rooster",
+                "gameInstanceKey": "rooster1"
+            }
+        }
+    ],
+    "status": 0,
+    "details": {
+        "action": "deleteAllGameObjectsByGameInstanceKey",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1"
+    }
+}
+
+
+* Sample Response 'On Failure':
+{
+    "status": 12,
+    "message": "No game object entries found in database with given game instance key",
+    "details": {
+        "action": "getAllGameObjectsByGameInstanceKey",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1"
+    }
+}

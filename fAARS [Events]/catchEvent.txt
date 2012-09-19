@@ -1,0 +1,132 @@
+# catchEvent
+This API allows to capture an event that happens in the physical world in order to evaluate game ECA rules in fAARS.
+
+* Method: PUT 
+* URL: /[gameKey]/[gameInstanceKey]/events
+* [gameKey]: who_is_the_rooster
+* [gameInstanceKey]: rooster1
+* Formats: JSON
+* Returns: JSON formatted message. See example below.
+* Possible return message codes:
+** 0 = Success
+** 2 = No game ID or game instance ID found
+** 20 = Either the eventGenerator or eventRecipient is not activated
+** 21 = No game ECA rules corresponding to this event were found
+
+## Example of a fAARS Event:
+
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"eventKey":"unlock","eventGeneratorKey":"game_instance_1","eventRecipientKey":"plot_point_1"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/events
+
+
+* Receives a JSON file via PUT method:
+{
+	"eventKey":"unlock",
+	"eventGeneratorKey":"game_instance_1",
+	"eventRecipientKey":"plot_point_1"
+}
+
+
+* Sample Response 'On Success':
+{
+    "gameECARules": [
+        {
+            "gameECARuleKey": "update_plot_point_to_unlocked_in_24hrs",
+            "conditions": [
+                {
+                    "conditionKey": "checkPrimaryAttribute",
+                    "objectScope": "recipient",
+                    "objectKey": "plot_point_1",
+                    "status": 1
+                }
+            ],
+            "status": 1
+        },
+        {
+            "gameECARuleKey": "update_plot_point_to_unlocked_in_2hrs",
+            "conditions": [
+                {
+                    "conditionKey": "checkPrimaryAttribute",
+                    "objectScope": "recipient",
+                    "objectKey": "plot_point_1",
+                    "status": 1
+                }
+            ],
+            "status": 1
+        },
+        {
+            "gameECARuleKey": "update_plot_point_to_locked",
+            "conditions": [
+                {
+                    "conditionKey": "checkPrimaryAttribute",
+                    "objectScope": "recipient",
+                    "objectKey": "plot_point_1",
+                    "status": 0
+                }
+            ],
+            "status": 0,
+            "actions": [
+                {
+                    "actionKey": "updatePrimaryObjectAttributeByObjectKey",
+                    "objectScope": "recipient",
+                    "objectKey": "plot_point_1",
+                    "output": {
+                        "status": 0,
+                        "details": {
+                            "action": "updatePrimaryObjectAttributeByObjectKey",
+                            "objectKey": "plot_point_1",
+                            "gameKey": "who_is_the_rooster",
+                            "gameInstanceKey": "rooster1",
+                            "attributeKey": "currentStateKey"
+                        }
+                    },
+                    "status": 0
+                }
+            ]
+        },
+        {
+            "gameECARuleKey": "update_plot_point_to_unlocked_via_mobile",
+            "conditions": [
+                {
+                    "conditionKey": "checkPrimaryAttribute",
+                    "objectScope": "recipient",
+                    "objectKey": "plot_point_1",
+                    "status": 1
+                }
+            ],
+            "status": 1
+        },
+        {
+            "gameECARuleKey": "update_plot_point_to_unlocked_via_mobile_web",
+            "conditions": [
+                {
+                    "conditionKey": "checkPrimaryAttribute",
+                    "objectScope": "recipient",
+                    "objectKey": "plot_point_1",
+                    "status": 1
+                }
+            ],
+            "status": 1
+        }
+    ],
+    "status": 0,
+    "details": {
+        "action": "catchEvent",
+        "eventGeneratorKey": "game_instance_1",
+        "eventRecipientKey": "plot_point_1",
+        "eventKey": "unlock",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster1"
+    }
+}
+
+
+* Sample Response 'On Failure':
+{
+    "status": 2,
+    "message": "No game ID or game instance ID found",
+    "details": {
+        "action": "getGameInstanceID",
+        "gameKey": "who_is_the_rooster",
+        "gameInstanceKey": "rooster"
+    }
+}
