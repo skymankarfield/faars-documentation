@@ -27,7 +27,7 @@ The v1.0 API introduces a number of features that were not available in the prot
 
 The platform works entirely using JSON files for data transmission, which is a very lightweight and natural file structure/format for supporting interactions among multiple platforms and environments. Although XML and other formats can be easily supported, they will become available in future releases.
 
-High Level details of fAARS can be found in the PDF document [faars_thesis.pdf], specifically in Chapter 3 "Design and Implementation of fAARS". 
+High Level details of fAARS can be found in the PDF document [http://hdl.handle.net/10402/era.25362], specifically in Chapter 3 "Design and Implementation of fAARS". 
 
 Also, I am pleased to announce that our work fAARS has been accepted to be presented in the 11th edition of the conference ICEC2012 (International Conference on Entertainment Computing - http://icec2012.org/). Since this is a private environment, I can share this paper here with you. Attached to this message you can find a copy of the paper, which describes the characteristics and capabilities of the fAARS platform and how it was used to develop two different games, in a summarized version of only 14 pages. In this paper, specifically in section 3.2, you can also find high level instructions on how to create and play a game in fAARS.
 
