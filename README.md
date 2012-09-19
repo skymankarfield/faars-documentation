@@ -1,4 +1,4 @@
-Welcome to fAARS-Zenfri API Documentation
+Welcome to the fAARS-Zenfri API Documentation v1.0
 ========================
 
 fAARS - Zenfri, Clandestine: Anomaly
@@ -16,16 +16,20 @@ _Base system:_ Running on CentOS release 6.3 (Final)
 _Base Kernel:_ Linux 2.6.32.28-xenU #1 SMP Thu Jan 20 00:41:40 UTC 2011 i686 i686 i386 GNU/Linux
 
 This is the version 1.0 of the fAARS API. This documentation encompasses a set of features that allows CRUD operations over fully customizable objects, operations and game rules. 
-The v1.0 API introduces a number of features that were not available in the prototype version, including:
-* Fully Game-Object management
+The v1.0 API introduces a number of features that were not available in the prototype version of this work, including:
+* Fully Game-Object customization and management
 * Access to internal actions and operations from RESTful interfaces
-* Create an unlimited number of variables for any given Game-Object
+* Add/Create an unlimited number of variables, collections and groups for any given Game-Object
 * Unlimited Multiple inheritance defined by a Groups structure
 * Multiple game instances running in parallel for multiple virtual scenarios
 * Support for multiplayer modality
-* Among other multiple proper RESTful POST, PUT, GET, DELETE operations
+* Among many other multiple proper RESTful POST, PUT, GET, DELETE operations
 
-The platform works entirely using JSON files, which is a very lightweight and natural file structure/format for supporting interactions among multiple platforms and environments. Although XML and other formats can be easily supported, they will become available in future releases.
+The platform works entirely using JSON files for data transmission, which is a very lightweight and natural file structure/format for supporting interactions among multiple platforms and environments. Although XML and other formats can be easily supported, they will become available in future releases.
+
+High Level details of fAARS can be found in the PDF document [faars_thesis.pdf], specifically in Chapter 3 "Design and Implementation of fAARS". 
+
+Also, I am pleased to announce that our work fAARS has been accepted to be presented in the 11th edition of the conference ICEC2012 (International Conference on Entertainment Computing - http://icec2012.org/). Since this is a private environment, I can share this paper here with you. Attached to this message you can find a copy of the paper, which describes the characteristics and capabilities of the fAARS platform and how it was used to develop two different games, in a summarized version of only 14 pages. In this paper, specifically in section 3.2, you can also find high level instructions on how to create and play a game in fAARS.
 
 ## Game >> Game-Instance >> Game-Group/Game-Object data types
 Although Game and Game-Instance can be considered a data type in the context of fAARS, operations, actions and events can only be performed over/by Game-Group/Game-Object data types.
