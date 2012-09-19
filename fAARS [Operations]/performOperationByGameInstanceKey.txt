@@ -9,8 +9,8 @@ Game-Object, please refer to the [Game Manager] set of APIs.
 
 * Method: PUT 
 * URL: /[gameKey]/[gameInstanceKey]/operations
-* [gameKey]: who_is_the_rooster
-* [gameInstanceKey]: rooster1
+* [gameKey]: clandestine_anomaly
+* [gameInstanceKey]: clandestine1
 * [attributeKey]: Attribute Key ID of one of the attributes of a Game-Object specified in the "attributes" array
 * Formats: JSON
 * Returns: JSON formatted message. See example below.
@@ -32,7 +32,7 @@ Game-Object, please refer to the [Game Manager] set of APIs.
 
 ## Example updating a set of Game-Objects attribute by providing a Game Instance Key ID and Attribute Key ID:
 
-curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","value":"5","operation":"+"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/operations
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","value":"5","operation":"+"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/operations
 
 
 * Receives a JSON file via PUT method:

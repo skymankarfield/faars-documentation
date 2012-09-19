@@ -3,8 +3,8 @@ Verify whether a Game-Object passes the login process by providing username and 
 
 * Method: GET
 * URL: /[gameKey]/[gameInstanceKey]/gameObjects/verifyObjectLogin/[username]/[password]
-* [gameKey]: who_is_the_rooster
-* [gameInstanceKey]: rooster1
+* [gameKey]: clandestine_anomaly
+* [gameInstanceKey]: clandestine1
 * [username]: Username assigned during Game-Object instantiation
 * [password]: Password assigned during Game-Object instantiation
 * Formats: JSON
@@ -17,7 +17,7 @@ Verify whether a Game-Object passes the login process by providing username and 
 
 ## Example verifying whether a Game-Object passes the login process by providing username and password:
 
-curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/verifyObjectLogin/email2@mail.com/passwordObject2
+curl -i -X GET http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/verifyObjectLogin/email2@mail.com/passwordObject2
 
 
 * Sample Response 'On Success':

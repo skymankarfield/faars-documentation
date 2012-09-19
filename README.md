@@ -25,51 +25,27 @@ The v1.0 API introduces a number of features that were not available in the prot
 * Support for multiplayer modality
 * Among many other multiple proper RESTful POST, PUT, GET, DELETE operations
 
-The platform works entirely using JSON files for data transmission, which is a very lightweight and natural file structure/format for supporting interactions among multiple platforms and environments. Although XML and other formats can be easily supported, they will become available in future releases.
+The fAARS platform is a back-end engine that has been designed and implemented according to the Event-Driven SOA (Service Oriented Architecture) architectural style. The fAARS internal components interact with each other through a well-defined RESTful interface that allows for the extension or replacement of already implemented parts.
+
+The platform works entirely using JSON files for data transmission, which is a very lightweight and very straightforward file structure and format for supporting interactions among multiple platforms and environments. Although XML and other formats can be easily supported, they will become available in future releases.
 
 High Level details of fAARS can be found in the PDF document [http://hdl.handle.net/10402/era.25362], specifically in Chapter 3 "Design and Implementation of fAARS". 
 
 Also, I am pleased to announce that our work fAARS has been accepted to be presented in the 11th edition of the conference ICEC2012 (International Conference on Entertainment Computing - http://icec2012.org/). Since this is a private environment, I can share this paper here with you. A copy of this paper called [faars_published_paper.pdf] can be found in this repository, which describes the characteristics and capabilities of the fAARS platform and how it was used to develop two different games, in a summarized version of only 14 pages. In this paper, specifically in section 3.2, you can also find high level instructions on how to create and play a game in fAARS.
 
-## Game >> Game-Instance >> Game-Group/Game-Object data types
-Although Game and Game-Instance can be considered a data type in the context of fAARS, operations, actions and events can only be performed over/by Game-Group/Game-Object data types.
-
-## Game-Group
-A Game-Group data type is an abstraction that groups Game-Objects together in order to allow the fAARS platform to perform operations, actions, and events over/by all the members of a given group. A Game-Group doesn't contain any attributes, but it provides abstract methods to Game-Objects. Game-Group data types can be seen as interfaces to allow Game-Objects to inherit the same set of actions, operations, and events among multiple groups. At the same time, this allows to express fAARS ECA game rules at the group level. 
-
-## Game-Object
-A Game-Object data type is the minimal and essential component of every game deployed on fAARS. It contains a specific set of default attributes, but it also allows support for an unlimited multiple inheritance and 'game developer-created' attributes.
-
-### Default list of Game-Object attributes
-* _fullObjectName_: Title or full name of the Game-Object. Used for displaying purposes only. It can contain either a number or a string value.
-* _objectKey_: This is a unique value that represents a particular Game-Object in an instance of a game. It can contain either a number or a string value.
-* _allowLogin_: Specifies whether a particular Game-Object is part of the pool of the login information. It can contain either '1' or '0' as value.
-* _loginInfo_: This is a struct that contains a 'username' and 'password' fields for a particular Game-Object. The 'username' and 'password' fields can contain either a number or a string value.
-* _currentStateKey_: Contains the current state of a Game-Object in the game. This can contain either a number or a string value.
-* _active_: Defines whether a Game-Object is active or not. In other words, whether a Game-Object should be considered to be part of the fAARS game rules processing. It can contain either '1' or '0' as value.
-* _transient_: Allows to differentiate between temporal and essential objects in a game instance during cloning of a game in fAARS. It can contain either '1' or '0' as value.
-* _currentGPSLocation_: A struct composed by 'currentLat' and 'currentLon', which allows to determine the current GPS position of a Game-Object. 'currentLat' and 'currentLon' should contain interger values.
-* _currentZone_: Determines the current abstract location of an object in a game on fAARS. It can contain either a number or a string value.
-
-### Groups
-Groups are contained in the "groups" attribute set. Every group element contained in the "groups" attribute set is specified by two parameters:
-* _groupKey_: Name of a group that a particular Game-Object belongs to. It can contain either a number or a string value.
-* _active_: Defines whether a Game-Object is actively part of a group to be considered to be part of the fAARS game rules processing.  It can contain either '1' or '0' as value.
-
-### Extra attributes
-Besides the default list of Game-Object attributes, any number of extra attributes can be supported in the "attributes" attribute set. Every extra attribute contained in the "attributes" attribute set is specified by three parameters:
-* _attributeKey_: Name of the attribute. It can contain either a number or a string value.
-* _value_: Value that contains a specific attribute. It can contain either a number or a string value.
-* _active_: Whether to consider a partiular attribute as part of the fAARS game rules.
-
-### Operations
-All the Game-Object data types support the primitive set of operations "add/substract/divide/multiply" over any of their default and extra set of attributes. Any Game-Object data type can access any of the primitive operations.
-
-### Actions
-There is a set of internal actions (functionality) like push-notifications, email, etc; that can be accessed internally (via fAARS ECA game rules) or through RESTful interfaces. Any Game-Object data type can access any of the internal built-in fAARS functionality.
-
-### Events
-Events are domain specific, which means that the name of the events embedded in the URL is decided by the game creator. The name of the events are entered in the fAARS ECA game rules, and they are contained as part of the RESTful URL structure. The scope and set of events that a Game-Object can perform is defined via the fAARS ECA game rules.
+## Important pieces of fAARS
+### Objects and Actors [objects_and_actors_README]
+In the context of the fAARS platform, every player and object of a game is represented by an instance of a Game-Object component in the game, which enables the player to interact (and detect interactions) with players across the real and virtual worlds. These interactions are Events.
+### Event-driven Game Engine for Game ECA Rules Processing [game_ECA_rules_README]
+This is the component that receives the Events produced by the Game-Objects in order to process the game rules and update the state of the Actors and Objects accordingly. Its functionality is exposed through web services.
+### Event Subscribers [external_systems_README]
+The fAARS platform provides a web service that allows external systems to register as observers of a game in fAARS. This is to allow external components to provide further downstream functionality to fAARS games as if they were part of the platform.
+### RESTful APIs
+All the functionality of fAARS can be accessed through a RESTful interface and via game ECA rules.
+* fAARS [Events]
+* fAARS [Game Manager]
+* fAARS [Operations] 
+* misc
 
 ## HTTP-based & RESTful
 The fAARS API is currently entirely based on HTTP requests, and conforms to the design principles of Representational State Transfer (REST). The three main data types are represented hierarchically in the URL in the same way they are related, i.e. game >> game instance >> groups/game objects >> (operations/actions/events). RESTful access uses the HTTP verbs to determine which action to perform:
@@ -82,7 +58,6 @@ The fAARS API is currently entirely based on HTTP requests, and conforms to the 
 The fAARS API attempts to return appropriate HTTP status codes (see http://en.wikipedia.org/wiki/List_of_HTTP_status_codes) for every request.
 
 ### Common status codes include:
-
 * 200 OK: request processed successfully.
 * 401 Not Authorized: either you need to provide authentication credentials, or the credentials provided aren't valid.
 * 403 Forbidden: fAARS understands your request, but refuses to fulfill it. An accompanying error message should explain why.

@@ -3,8 +3,8 @@ Updates a specific Game-Object by providing its unique Key ID.
 
 * Method: PUT
 * URL: /[gameKey]/[gameInstanceKey]/gameObjects/[objectKey]
-* [gameKey]: who_is_the_rooster
-* [gameInstanceKey]: rooster1
+* [gameKey]: clandestine_anomaly
+* [gameInstanceKey]: clandestine1
 * [objectKey]: The unique object key ID value specified when creating the Game-Object
 * Formats: JSON
 * Returns: JSON formatted message. See example below.
@@ -24,7 +24,7 @@ Updates a specific Game-Object by providing its unique Key ID.
 
 ## Example updating a Game-Object by its unique Key ID:
 
-curl -i -X PUT -H 'Content-Type: application/json' -d '{"fullObjectName":"fullName","objectKey":"objectKeyTest","allowLogin":"1","loginInfo":[{"username":"email@mail.com","password":"passwordObject"}],"currentStateKey":"initialState","active":"0","transient":"1","attributes":[{"attributeKey":"attr1","value":"val","active":"1"},{"attributeKey":"attr2","value":"val","active":"0"},{"attributeKey":"attr3","value":"val","active":"1"}],"groups":[{"groupKey":"group4","active":"1"},{"groupKey":"group5","active":"0"},{"groupKey":"group6","active":"0"}],"collections":[{"collectionKey":"coll1","value":[1,2,3],"active":"1"},{"collectionKey":"coll2","value":[4,5,6],"active":"1"},{"collectionKey":"coll3","value":[7,8,9],"active":"1"}],"currentGPSLocation":[{"currentLat":"1000000","currentLon":"1000000"}],"currentZone":"initialZone"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKey6
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"fullObjectName":"fullName","objectKey":"objectKeyTest","allowLogin":"1","loginInfo":[{"username":"email@mail.com","password":"passwordObject"}],"currentStateKey":"initialState","active":"0","transient":"1","attributes":[{"attributeKey":"attr1","value":"val","active":"1"},{"attributeKey":"attr2","value":"val","active":"0"},{"attributeKey":"attr3","value":"val","active":"1"}],"groups":[{"groupKey":"group4","active":"1"},{"groupKey":"group5","active":"0"},{"groupKey":"group6","active":"0"}],"collections":[{"collectionKey":"coll1","value":[1,2,3],"active":"1"},{"collectionKey":"coll2","value":[4,5,6],"active":"1"},{"collectionKey":"coll3","value":[7,8,9],"active":"1"}],"currentGPSLocation":[{"currentLat":"1000000","currentLon":"1000000"}],"currentZone":"initialZone"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKey6
 
 
 * Receives a JSON file via PUT method:

@@ -3,8 +3,8 @@ Deletes a specific Game-Object by providing its unique Key ID.
 
 * Method: DELETE
 * URL: /[gameKey]/[gameInstanceKey]/gameObjects/[objectKey]
-* [gameKey]: who_is_the_rooster
-* [gameInstanceKey]: rooster1
+* [gameKey]: clandestine_anomaly
+* [gameInstanceKey]: clandestine1
 * [objectKey]: The unique object key ID value specified when creating the Game-Object
 * Formats: JSON
 * Returns: JSON formatted message. See example below.
@@ -17,7 +17,7 @@ Deletes a specific Game-Object by providing its unique Key ID.
 
 ## Example deleting a Game-Object by its unique Key ID:
 
-curl -i -X DELETE http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKey2
+curl -i -X DELETE http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKey2
 
 
 * Sample Response 'On Success':

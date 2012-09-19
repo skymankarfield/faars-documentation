@@ -3,8 +3,8 @@ This API allows to capture an event that happens in the physical world in order 
 
 * Method: PUT 
 * URL: /[gameKey]/[gameInstanceKey]/events
-* [gameKey]: who_is_the_rooster
-* [gameInstanceKey]: rooster1
+* [gameKey]: clandestine_anomaly
+* [gameInstanceKey]: clandestine1
 * Formats: JSON
 * Returns: JSON formatted message. See example below.
 * Possible return message codes:
@@ -15,7 +15,7 @@ This API allows to capture an event that happens in the physical world in order 
 
 ## Example of a fAARS Event:
 
-curl -i -X PUT -H 'Content-Type: application/json' -d '{"eventKey":"unlock","eventGeneratorKey":"game_instance_1","eventRecipientKey":"plot_point_1"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/events
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"eventKey":"unlock","eventGeneratorKey":"game_instance_1","eventRecipientKey":"plot_point_1"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/events
 
 
 * Receives a JSON file via PUT method:

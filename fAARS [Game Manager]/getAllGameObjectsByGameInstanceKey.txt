@@ -4,8 +4,8 @@ Game Instance Key ID.
 
 * Method: GET
 * URL: /[gameKey]/[gameInstanceKey]/gameObjects
-* [gameKey]: who_is_the_rooster
-* [gameInstanceKey]: rooster1
+* [gameKey]: clandestine_anomaly
+* [gameInstanceKey]: clandestine1
 * Formats: JSON
 * Returns: JSON formatted message. See example below.
 * Possible return message codes:
@@ -20,7 +20,7 @@ Game Instance Key ID.
 
 ## Example getting Game-Objects by Game Instance Key ID:
 
-curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects
+curl -i -X GET http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects
 
 
 * Sample Response 'On Success':

@@ -2,7 +2,7 @@
 
 ## [Game Manager]
 ### createObject
-curl -i -X POST -H 'Content-Type: application/json' -d '{"fullObjectName":"fullName","objectKey":"objectKeyTest","allowLogin":"1","loginInfo":[{"username":"email@mail.com","password":"passwordObject"}],"currentStateKey":"initialState","active":"0","transient":"1","attributes":[{"attributeKey":"attr1","value":"val","active":"1"},{"attributeKey":"attr2","value":"val","active":"0"},{"attributeKey":"attr3","value":"val","active":"1"}],"groups":[{"groupKey":"group4","active":"1"},{"groupKey":"group5","active":"0"},{"groupKey":"group6","active":"0"}],"collections":[{"collectionKey":"coll1","value":[1,2,3],"active":"1"},{"collectionKey":"coll2","value":[4,5,6],"active":"1"},{"collectionKey":"coll3","value":[7,8,9],"active":"1"}],"currentGPSLocation":[{"currentLat":"1000000","currentLon":"1000000"}],"currentZone":"initialZone"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects
+curl -i -X POST -H 'Content-Type: application/json' -d '{"fullObjectName":"fullName","objectKey":"objectKeyTest","allowLogin":"1","loginInfo":[{"username":"email@mail.com","password":"passwordObject"}],"currentStateKey":"initialState","active":"0","transient":"1","attributes":[{"attributeKey":"attr1","value":"val","active":"1"},{"attributeKey":"attr2","value":"val","active":"0"},{"attributeKey":"attr3","value":"val","active":"1"}],"groups":[{"groupKey":"group4","active":"1"},{"groupKey":"group5","active":"0"},{"groupKey":"group6","active":"0"}],"collections":[{"collectionKey":"coll1","value":[1,2,3],"active":"1"},{"collectionKey":"coll2","value":[4,5,6],"active":"1"},{"collectionKey":"coll3","value":[7,8,9],"active":"1"}],"currentGPSLocation":[{"currentLat":"1000000","currentLon":"1000000"}],"currentZone":"initialZone"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects
 
 
 * Receives a JSON file via POST method:
@@ -103,7 +103,7 @@ curl -i -X POST -H 'Content-Type: application/json' -d '{"fullObjectName":"fullN
 
 
 ### getObjectByKey
-curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKey21
+curl -i -X GET http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKey21
 
 
 * Sample Response 'On Success':
@@ -205,7 +205,7 @@ curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/
 
 
 ### getAllGameObjectsByGameInstanceKey
-curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects
+curl -i -X GET http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects
 
 
 * Sample Response 'On Success':
@@ -684,7 +684,7 @@ curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/
 
 
 ### getAllGameObjectsByGroupKey
-curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/groups/group2
+curl -i -X GET http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/groups/group2
 
 
 * Sample Response 'On Success':
@@ -967,7 +967,7 @@ curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/
 
 
 ### deleteObjectByKey
-curl -i -X DELETE http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKey2
+curl -i -X DELETE http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKey2
 
 
 * Sample Response 'On Success':
@@ -994,7 +994,7 @@ curl -i -X DELETE http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooste
 
 
 ### deleteAllGameObjectsByGroupKey
-curl -i -X DELETE http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/groups/group2
+curl -i -X DELETE http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/groups/group2
 
 
 * Sample Response 'On Success':
@@ -1052,7 +1052,7 @@ curl -i -X DELETE http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooste
 
 
 ### deleteAllGameObjectsByGameInstanceKey
-curl -i -X DELETE http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects
+curl -i -X DELETE http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects
 
 
 * Sample Response 'On Success':
@@ -1108,7 +1108,7 @@ curl -i -X DELETE http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooste
 
 
 ### updateObjectByKey
-curl -i -X PUT -H 'Content-Type: application/json' -d '{"fullObjectName":"fullName","objectKey":"objectKeyTest","allowLogin":"1","loginInfo":[{"username":"email@mail.com","password":"passwordObject"}],"currentStateKey":"initialState","active":"0","transient":"1","attributes":[{"attributeKey":"attr1","value":"val","active":"1"},{"attributeKey":"attr2","value":"val","active":"0"},{"attributeKey":"attr3","value":"val","active":"1"}],"groups":[{"groupKey":"group4","active":"1"},{"groupKey":"group5","active":"0"},{"groupKey":"group6","active":"0"}],"collections":[{"collectionKey":"coll1","value":[1,2,3],"active":"1"},{"collectionKey":"coll2","value":[4,5,6],"active":"1"},{"collectionKey":"coll3","value":[7,8,9],"active":"1"}],"currentGPSLocation":[{"currentLat":"1000000","currentLon":"1000000"}],"currentZone":"initialZone"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKey6
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"fullObjectName":"fullName","objectKey":"objectKeyTest","allowLogin":"1","loginInfo":[{"username":"email@mail.com","password":"passwordObject"}],"currentStateKey":"initialState","active":"0","transient":"1","attributes":[{"attributeKey":"attr1","value":"val","active":"1"},{"attributeKey":"attr2","value":"val","active":"0"},{"attributeKey":"attr3","value":"val","active":"1"}],"groups":[{"groupKey":"group4","active":"1"},{"groupKey":"group5","active":"0"},{"groupKey":"group6","active":"0"}],"collections":[{"collectionKey":"coll1","value":[1,2,3],"active":"1"},{"collectionKey":"coll2","value":[4,5,6],"active":"1"},{"collectionKey":"coll3","value":[7,8,9],"active":"1"}],"currentGPSLocation":[{"currentLat":"1000000","currentLon":"1000000"}],"currentZone":"initialZone"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKey6
 
 
 * Receives a JSON file via PUT method:
@@ -1207,7 +1207,7 @@ curl -i -X PUT -H 'Content-Type: application/json' -d '{"fullObjectName":"fullNa
 
 
 ### verifyObjectLogin
-curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/verifyObjectLogin/email2@mail.com/passwordObject2
+curl -i -X GET http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/verifyObjectLogin/email2@mail.com/passwordObject2
 
 
 * Sample Response 'On Success':
@@ -1239,7 +1239,7 @@ curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/
 
 
 ### updatePrimaryObjectAttributeByObjectKey
-curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"currentStateKey","value":"plotPointLocked","operation":"set"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/plot_point_1/primaryAttributes
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"currentStateKey","value":"plotPointLocked","operation":"set"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/plot_point_1/primaryAttributes
 
 
 * Receives a JSON file via PUT method:
@@ -1275,7 +1275,7 @@ curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"currentS
 
 
 ### addSecodaryAttributeByObjectKey
-curl -i -X POST -H 'Content-Type: application/json' -d '{"attributeKey":"lonely","value":"-1","active":"1"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKeyTest/secondaryAttributes
+curl -i -X POST -H 'Content-Type: application/json' -d '{"attributeKey":"lonely","value":"-1","active":"1"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKeyTest/secondaryAttributes
 
 
 * Receives a JSON file via POST method:
@@ -1311,7 +1311,7 @@ curl -i -X POST -H 'Content-Type: application/json' -d '{"attributeKey":"lonely"
 
 
 ### addCollectionByObjectKey
-curl -i -X POST -H 'Content-Type: application/json' -d '{"collectionKey":"collN","value":["a",1,"b",2],"active":"1"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKeyTest/collections
+curl -i -X POST -H 'Content-Type: application/json' -d '{"collectionKey":"collN","value":["a",1,"b",2],"active":"1"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKeyTest/collections
 
 
 * Receives a JSON file via POST method:
@@ -1347,7 +1347,7 @@ curl -i -X POST -H 'Content-Type: application/json' -d '{"collectionKey":"collN"
 
 
 ### collectionExistsInObjectByObjectKey
-curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKeyTest/collections/collectionExists/coll2
+curl -i -X GET http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKeyTest/collections/collectionExists/coll2
 
 
 * Sample Response 'On Success':
@@ -1376,7 +1376,7 @@ curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/
 
 
 ### secondaryAttributeExistsInObjectByObjectKey
-curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKeyTest/secondaryAttributes/attributeExists/lonely
+curl -i -X GET http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKeyTest/secondaryAttributes/attributeExists/lonely
 
 
 * Sample Response 'On Success':
@@ -1405,7 +1405,7 @@ curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/
 
 
 ### getSecondaryAttributeValueInObjectByObjectKey
-curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKeyTest/secondaryAttributes/lonely
+curl -i -X GET http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKeyTest/secondaryAttributes/lonely
 
 
 * Sample Response 'On Success':
@@ -1434,7 +1434,7 @@ curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/
 
 
 ### getCollectionValueInObjectByObjectKey
-curl -i -X GET http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/objectKeyTest/collections/coll3
+curl -i -X GET http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/objectKeyTest/collections/coll3
 
 
 * Sample Response 'On Success':

@@ -4,8 +4,8 @@ Group Key ID.
 
 * Method: DELETE
 * URL: /[gameKey]/[gameInstanceKey]/gameObjects/groups/[groupKey]
-* [gameKey]: who_is_the_rooster
-* [gameInstanceKey]: rooster1
+* [gameKey]: clandestine_anomaly
+* [gameInstanceKey]: clandestine1
 * [groupKey]: Any group key value
 * Formats: JSON
 * Returns: JSON formatted message. See example below.
@@ -19,7 +19,7 @@ Group Key ID.
 
 ## Example deleting Game-Objects by Group Key ID:
 
-curl -i -X DELETE http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/gameObjects/groups/group2
+curl -i -X DELETE http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/gameObjects/groups/group2
 
 
 * Sample Response 'On Success':

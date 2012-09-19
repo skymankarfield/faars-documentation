@@ -2,7 +2,7 @@
 
 ## [Operations]
 ### performOperationByObjectKey
-curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","value":"5","operation":"+"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/operations/ObjectKeyTest
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","value":"5","operation":"+"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/operations/ObjectKeyTest
 
 
 * Receives a JSON file via PUT method:
@@ -38,7 +38,7 @@ curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","
 
 
 ### performOperationByGroupKey
-curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","value":"5","operation":"+"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/operations/groups/group2
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","value":"5","operation":"+"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/operations/groups/group2
 
 
 * Receives a JSON file via PUT method:
@@ -108,7 +108,7 @@ curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","
 
 
 ### performOperationByGameInstanceKey
-curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","value":"5","operation":"+"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/operations
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","value":"5","operation":"+"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/operations
 
 
 * Receives a JSON file via PUT method:
@@ -219,7 +219,7 @@ curl -i -X PUT -H 'Content-Type: application/json' -d '{"attributeKey":"attr1","
 
 
 ### pushItemsToCollection
-curl -i -X PUT -H 'Content-Type: application/json' -d '{"value":["x","y","z"]}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/operations/ObjectKeyTest/collections/coll1
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"value":["x","y","z"]}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/operations/ObjectKeyTest/collections/coll1
 
 
 * Receives a JSON file via PUT method:
@@ -256,7 +256,7 @@ curl -i -X PUT -H 'Content-Type: application/json' -d '{"value":["x","y","z"]}' 
 
 
 ### itemExistsInCollection
-curl -i -X GET -H 'Content-Type: application/json' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/operations/ObjectKeyTest/collections/coll1/itemExistsInCollection/g
+curl -i -X GET -H 'Content-Type: application/json' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/operations/ObjectKeyTest/collections/coll1/itemExistsInCollection/g
 
 
 * Sample Response 'On Success':
@@ -290,7 +290,7 @@ curl -i -X GET -H 'Content-Type: application/json' http://faars-rocketfuel.javak
 
 
 ### getItemPositionInCollectionByValue
-curl -i -X GET -H 'Content-Type: application/json' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/operations/ObjectKeyTest/collections/coll1/itemPositionByValue/1
+curl -i -X GET -H 'Content-Type: application/json' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/operations/ObjectKeyTest/collections/coll1/itemPositionByValue/1
 
 
 * Sample Response 'On Success':
@@ -330,7 +330,7 @@ curl -i -X GET -H 'Content-Type: application/json' http://faars-rocketfuel.javak
 
 
 ### deleteItemFromCollectionByValue
-curl -i -X DELETE -H 'Content-Type: application/json' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/operations/ObjectKeyTest/collections/coll1/deleteByValue/1
+curl -i -X DELETE -H 'Content-Type: application/json' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/operations/ObjectKeyTest/collections/coll1/deleteByValue/1
 
 
 * Sample Response 'On Success':
@@ -363,7 +363,7 @@ curl -i -X DELETE -H 'Content-Type: application/json' http://faars-rocketfuel.ja
 
 
 ### deleteItemFromCollectionByPosition
-curl -i -X DELETE -H 'Content-Type: application/json' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/operations/ObjectKeyTest/collections/coll1/deleteByPosition/1
+curl -i -X DELETE -H 'Content-Type: application/json' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/operations/ObjectKeyTest/collections/coll1/deleteByPosition/1
 
 
 * Sample Response 'On Success':

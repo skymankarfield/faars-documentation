@@ -2,7 +2,7 @@
 
 ## [Events]
 ### catchEvent
-curl -i -X PUT -H 'Content-Type: application/json' -d '{"eventKey":"unlock","eventGeneratorKey":"game_instance_1","eventRecipientKey":"plot_point_1"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/events
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"eventKey":"unlock","eventGeneratorKey":"game_instance_1","eventRecipientKey":"plot_point_1"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/events
 
 
 * Receives a JSON file via PUT method:
@@ -120,7 +120,7 @@ curl -i -X PUT -H 'Content-Type: application/json' -d '{"eventKey":"unlock","eve
 
 
 ### addScheduledEvent
-curl -i -X POST -H 'Content-Type: application/json' -d '{"objectKey":"event1","eventKey":"unlock","eventGeneratorKey":"game_instance_1","eventRecipientKey":"plot_point_1","year":"2012","month":"9","day":"16","hour":"15","minute":"30","second":"10"}' http://faars-rocketfuel.javakafe.com/who_is_the_rooster/rooster1/scheduledEvent
+curl -i -X POST -H 'Content-Type: application/json' -d '{"objectKey":"event1","eventKey":"unlock","eventGeneratorKey":"game_instance_1","eventRecipientKey":"plot_point_1","year":"2012","month":"9","day":"16","hour":"15","minute":"30","second":"10"}' http://faars-zenfri.javakafe.com/clandestine_anomaly/clandestine1/scheduledEvent
 
 
 * Receives a JSON file via PUT method:
