@@ -46,8 +46,9 @@ All the functionality of fAARS can be accessed through a RESTful interface and v
 * fAARS [Game Manager]
 * fAARS [Operations] 
 * misc
-### fAARS Software Architecture
-![MyImage](skymankarfield.github.com/faars-zenfri/misc/img/architecture.jpg)
+## fAARS Software Architecture
+![MyImage](https://github.com/skymankarfield/faars-zenfri/blob/master/misc/img/architecture.jpg)
+Software Architecture
 ## HTTP-based & RESTful
 The fAARS API is currently entirely based on HTTP requests, and conforms to the design principles of Representational State Transfer (REST). The three main data types are represented hierarchically in the URL in the same way they are related, i.e. game >> game instance >> groups/game objects >> (operations/actions/events). RESTful access uses the HTTP verbs to determine which action to perform:
 * GET : Used to retrieve data. Retrieves information about game objects and game state.
