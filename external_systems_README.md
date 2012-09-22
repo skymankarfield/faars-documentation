@@ -1,2 +1,7 @@
-TBA
+The Subscribers RESTful Interface
 ========================
+fAARS provides a RESTful service that allows external systems to observe a game and to provide further downstream functionality to fAARS games, as if they were part of the platform. Subscribers can be either Active or Passive. Active subscribers can push events to the Game Engine where passive systems are only notified about Events. In either case, the external component needs to support the Long Polling messaging protocol and to understand JSON (http://www.json.org/) encoded messages. This service is composed of two main APIs. 
+The registerObserver API allows external systems to register as observers of the games running on fAARS. To that end, the system has to provide (a) a gameInstance-ID, identifying the game of interest; (b) a client-key, identifying the external system thus ensuring that only recognized subscribers can observe fAARS games; and (c) the desired interactivity mode, specifying whether the external component will be interacting with fAARS in a passive or active mode. The catchEvent API allows external systems to push events into fAARS via real-time data streaming and requires four parameters: (a) the game-ID; (b) the client-key; (c) the event-type, i.e., the name of the Event that is being communicated to the Engine; (d) and the event recipient identifying the Actor/Game-Object who should receive it.
+
+### Sample list of external systems that can be attached to the fAARS platform
+![My image4](http://github.com/skymankarfield/faars-zenfri/raw/master/misc/img/external_systems.jpg)

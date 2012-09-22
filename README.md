@@ -35,6 +35,7 @@ Also, I am pleased to announce that our work fAARS has been accepted to be prese
 
 ## fAARS Software Architecture
 ![My image](http://github.com/skymankarfield/faars-zenfri/raw/master/misc/img/architecture.jpg)
+
 As shown in the figure above, the fAARS platform consists of two main components: (a) the Actors/Game-Objects (and their devices), (b) the Game Engine, which is responsible for recognizing the Actors/Game-Objects’ actions and inferring the next game state based on the game rules. The Actors/Game-Objects access the game engine through the fAARS API. Furthermore, external components (i.e., Subscribers) can be integrated with the Game Engine through the Subscribers API. The fAARS platform is implemented according to the Event-Driven SOA (Service Oriented Ar-chitecture) style. The fAARS components interact with each other through a well-defined RESTful interface that allows for their extension and/or reimplementa-tion.
 ## Important pieces of fAARS
 ### Objects and Actors [objects_and_actors_README]
