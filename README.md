@@ -3,17 +3,22 @@ Welcome to the fAARS-Zenfri API Documentation v1.0
 
 fAARS - Zenfri, Clandestine: Anomaly
 
-# fAARS API Documentation
-
+## fAARS API Documentation
 _Current base URI:_ http://faars-zenfri.javakafe.com/
+
 _[gameKey]:_ clandestine_anomaly
+
 _[gameInstanceKey]:_ clandestine1
 
 ##Technical specs
 _Base system:_ Running on CentOS release 6.3 (Final)
+
 _Base Kernel:_ Linux 2.6.32.28-xenU #1 SMP Thu Jan 20 00:41:40 UTC 2011 i686 i686 i386 GNU/Linux
+
 _Programming language:_ PHP 5.3.17 (cli) (built: Sep 18 2012 13:39:21) with Slim Framework to allow access via a RESTful interface
+
 _Database manager Server:_ MySQL version: 5.5.27 accessed via internal Linux socket
+
 _Web Server_: Apache/2.2.15 (CentOS)
 
 ##Introduction
