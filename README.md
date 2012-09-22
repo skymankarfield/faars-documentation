@@ -33,6 +33,9 @@ High Level details of fAARS can be found in the PDF document [http://hdl.handle.
 
 Also, I am pleased to announce that our work fAARS has been accepted to be presented in the 11th edition of the conference ICEC2012 (International Conference on Entertainment Computing - http://icec2012.org/). Since this is a private environment, I can share this paper here with you. A copy of this paper called [faars_published_paper.pdf] can be found in this repository, which describes the characteristics and capabilities of the fAARS platform and how it was used to develop two different games, in a summarized version of only 14 pages. In this paper, specifically in section 3.2, you can also find high level instructions on how to create and play a game in fAARS.
 
+## fAARS Software Architecture
+![My image](http://github.com/skymankarfield/faars-zenfri/raw/master/misc/img/architecture.jpg)
+As shown in the figure above, the fAARS platform consists of two main components: (a) the Actors/Game-Objects (and their devices), (b) the Game Engine, which is responsible for recognizing the Actors/Game-Objects’ actions and inferring the next game state based on the game rules. The Actors/Game-Objects access the game engine through the fAARS API. Furthermore, external components (i.e., Subscribers) can be integrated with the Game Engine through the Subscribers API. The fAARS platform is implemented according to the Event-Driven SOA (Service Oriented Ar-chitecture) style. The fAARS components interact with each other through a well-defined RESTful interface that allows for their extension and/or reimplementa-tion.
 ## Important pieces of fAARS
 ### Objects and Actors [objects_and_actors_README]
 In the context of the fAARS platform, every player and object of a game is represented by an instance of a Game-Object component in the game, which enables the player to interact (and detect interactions) with players across the real and virtual worlds. These interactions are called Events.
@@ -46,12 +49,6 @@ All the functionality of fAARS can be accessed through a RESTful interface and v
 * fAARS [Game Manager]
 * fAARS [Operations] 
 * misc
-
-## fAARS Software Architecture
-![My image](http://github.com/skymankarfield/faars-zenfri/raw/master/misc/img/architecture.jpg)
-
-Software Architecture
-
 ## HTTP-based & RESTful
 The fAARS API is currently entirely based on HTTP requests, and conforms to the design principles of Representational State Transfer (REST). The three main data types are represented hierarchically in the URL in the same way they are related, i.e. game >> game instance >> groups/game objects >> (operations/actions/events). RESTful access uses the HTTP verbs to determine which action to perform:
 * GET : Used to retrieve data. Retrieves information about game objects and game state.
