@@ -3,7 +3,6 @@ Welcome to the fAARS-Zenfri API Documentation v1.0
 
 fAARS - Zenfri, Clandestine: Anomaly
 
-## fAARS API Documentation
 _Current base URI:_ http://faars-zenfri.javakafe.com/
 
 _[gameKey]:_ clandestine_anomaly
