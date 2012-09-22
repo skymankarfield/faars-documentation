@@ -7,7 +7,7 @@ The Actors/Game-Objects are notified about game-state changes by the Message Man
 ![My image2](http://github.com/skymankarfield/faars-zenfri/raw/master/misc/img/sequenceDiagramEPE.png)
 
 ### A simple state transition diagram on how ECA Rules are evaluated
-![My image3](http://github.com/skymankarfield/faars-zenfri/raw/master/misc/img/stateTrasitionDiagram.png)
+![My image3](http://github.com/skymankarfield/faars-zenfri/raw/master/misc/img/stateTransitionDiagram.png)
 
 ##Authoring fAARS Games Rules
 fAARS does not have an authoring environment. The game rules are defined as Events-Conditions-Actions (ECA) triplets, stored over three database tables. The Events table specifies the event generator, its recipient, and its type. The Condition table specifies the name of a condition, the subject of the condition (generator or recipient), and the value of that condition, which can be the current state of an Actor/Game-Object in the game, the score of an Actor, or the location of an Actor/Game-Object or a group of Actors/Game-Objects. Finally, the Actions table contains the name of the action, the recipient of the action, which may be the generator or the recipient of the Event, and the value of that action, which can be a score number, a location update in the real or the virtual world, or a state to which an Actor/Game-Object or group of Actors/Game-Objects will transition.  
