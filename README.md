@@ -35,7 +35,7 @@ Also, I am pleased to announce that our work fAARS has been accepted to be prese
 
 ## Important pieces of fAARS
 ### Objects and Actors [objects_and_actors_README]
-In the context of the fAARS platform, every player and object of a game is represented by an instance of a Game-Object component in the game, which enables the player to interact (and detect interactions) with players across the real and virtual worlds. These interactions are Events.
+In the context of the fAARS platform, every player and object of a game is represented by an instance of a Game-Object component in the game, which enables the player to interact (and detect interactions) with players across the real and virtual worlds. These interactions are called Events.
 ### Event-driven Game Engine for Game ECA Rules Processing [game_ECA_rules_README]
 This is the component that receives the Events produced by the Game-Objects in order to process the game rules and update the state of the Actors and Objects accordingly. Its functionality is exposed through web services.
 ### Event Subscribers [external_systems_README]
@@ -46,13 +46,14 @@ All the functionality of fAARS can be accessed through a RESTful interface and v
 * fAARS [Game Manager]
 * fAARS [Operations] 
 * misc
-
+### fAARS Software Architecture
+![MyImage](skymankarfield.github.com/faars-zenfri/misc/img/architecture.jpg)
 ## HTTP-based & RESTful
 The fAARS API is currently entirely based on HTTP requests, and conforms to the design principles of Representational State Transfer (REST). The three main data types are represented hierarchically in the URL in the same way they are related, i.e. game >> game instance >> groups/game objects >> (operations/actions/events). RESTful access uses the HTTP verbs to determine which action to perform:
 * GET : Used to retrieve data. Retrieves information about game objects and game state.
-* PUT : Used to update data in fAARS. Updates a game object and triggers events, operations and actions.
-* POST : Used to store new game objects.
-* DELETE : Used to delete game objects.
+* PUT : Used to update data in fAARS. Allows to update Game-Object data and trigger events, operations and actions.
+* POST : Used to store new Game-Objects.
+* DELETE : Used to delete Game-Objects.
 
 ## HTTP Status Codes
 The fAARS API attempts to return appropriate HTTP status codes (see http://en.wikipedia.org/wiki/List_of_HTTP_status_codes) for every request.
