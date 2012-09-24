@@ -13,7 +13,7 @@ Although a game-authoring environment has not yet been implemented as part of th
 
 Three steps are necessary to define these Pacman rules as fAARS ECA rules:
 
-First, an Event must be defined to cause the first ECA rule to fire. This implies that we need to translate the actions of an Event generator over an Event recipient to the corresponding Event type in the real world. The “capture” action can be translated as follows:
+First, an Event must be defined to cause the first ECA rule to fire. This implies that we need to translate the actions of an Event generator over an Event recipient to the corresponding Event type in the real world. The “capture” and "eat" actions can be translated as follows:
 
 1.	“A Ghost captures Pacman”.
 
