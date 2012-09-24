@@ -19,11 +19,10 @@ First, an Event must be defined to cause the first ECA rule to fire. This implie
 
 2.	"Pacman captures a Ghost”.
 
-In the context of fAARS-Pacman, these two events happen in the real world by decoding a QR code using a smart-phone:
-
 3.	“Pacman eats a powerpill”.
 
-Although a “powerpill” is referred to as the Event recipient in this case, it is just a game item that allows Pacman to change its state and increase its score. The way to represent this game item in the context of fAARS-Pacman is to create an instance of an Actor/Game-Objects as the “powerpill”.
+In the context of fAARS-Pacman, these set of events happen in the real world by decoding QR codes using a smart-phone.
+Although in the third event specification above a “powerpill” is referred to as the Event recipient, a "powerpill" is a game item that allows Pacman to change its state and increase its score. The way to represent this game item in the context of fAARS-Pacman is to create an instance of an Actor/Game-Objects as the “powerpill”.
 The next step in the rule-specification process involves the specification of the Condition(s) to activate one ECA rule. A rule is activated based on the current state of the Actors that are involved in an Event, the generator and the recipient. A set of states for each of the Actors/Game-Objects in a game has to be defined based on their game roles. For example, although in fAARS-Pacman there are five Actors, there are only two game roles: an Actor/Game-Object can be either Pacman or a Ghost. Pacman can be in one of three states at a time: (a) “chasing” a Ghost after having eaten a “powerpill”, (b) “running_away” from a Ghost, or (c) “captured”. In the same way, a Ghost can be in either one of three states at any time: (a) “chasing”, (b) “running_away”, or (c) “captured”. Using this information, the conditions of each of the ECA rules that correspond to each of the Events defined in the previous step are: 
 
 1.	“When Ghost is in the chasing state” and “When Pacman is in the running_away state”.
