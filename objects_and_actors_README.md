@@ -42,4 +42,4 @@ There is a set of internal actions (functionality) like push-notifications, emai
 Events are domain specific, which means that the name of the events embedded in the URL is decided by the game creator. The name of the events are entered in the fAARS ECA game rules, and they are contained as part of the RESTful URL structure. The scope and set of events that a Game-Object can perform is defined via the fAARS ECA game rules.
 
 ### An example of a Game-Object in a JSON file ready to be entered to fAARS
-https://github.com/skymankarfield/faars-zenfri/blob/master/fAARS%20%5BGame%20Manager%5D/createObject.txt
+https://github.com/skymankarfield/faars-documentation/blob/master/fAARS%20%5BGame%20Manager%5D/createObject.txt
