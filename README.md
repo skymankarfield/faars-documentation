@@ -1,7 +1,7 @@
 Welcome to the fAARS API Documentation v1.0
 ========================
 
-fAARS - Zenfri, Clandestine: Anomaly
+Using the tuple 'fAARS - Zenfri' in the base URIs to run the examples provided in the documentation.
 
 _Current base URI:_ http://faars-zenfri.javakafe.com/
 
