@@ -1,4 +1,4 @@
-Welcome to the fAARS-Zenfri API Documentation v1.0
+Welcome to the fAARS API Documentation v1.0
 ========================
 
 fAARS - Zenfri, Clandestine: Anomaly
